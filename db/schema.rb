@@ -11,9 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20130325055121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "celebrations", force: true do |t|
+    t.string   "label"
+    t.text     "description"
+    t.integer  "rank_id"
+    t.integer  "color_id"
+    t.integer  "season_id"
+    t.integer  "ordo_id"
+    t.string   "kind"
+    t.string   "rule"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "celebrations", ["color_id"], name: "index_celebrations_on_color_id"
+  add_index "celebrations", ["ordo_id", "label"], name: "index_celebrations_on_ordo_id_and_label", unique: true
+  add_index "celebrations", ["ordo_id"], name: "index_celebrations_on_ordo_id"
+  add_index "celebrations", ["rank_id"], name: "index_celebrations_on_rank_id"
+  add_index "celebrations", ["season_id"], name: "index_celebrations_on_season_id"
+
+  create_table "colors", force: true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ordos", force: true do |t|
+    t.string   "label"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ranks", force: true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "seasons", force: true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
