@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @celebration.label %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @celebration.description %>
+</p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @celebration.rank %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @celebration.color %>
+</p>
+
+<p>
+  <strong>Season:</strong>
+  <%= @celebration.season %>
+</p>
+
+<p>
+  <strong>Ordo:</strong>
+  <%= @celebration.ordo %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @celebration.kind %>
+</p>
+
+<p>
+  <strong>Rule:</strong>
+  <%= @celebration.rule %>
+</p>
+
+
+<%= link_to 'Edit', edit_celebration_path(@celebration) %> |
+<%= link_to 'Back', celebrations_path %>
