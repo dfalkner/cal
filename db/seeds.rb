@@ -84,3 +84,6 @@
   {code: 'na', name:  'Not Applicable'}
 ].each {|i| Season.find_or_create_by_code(i)}
 
+[ {label: '', description: '', rank_id: Rank.find_or_create_by_code('sol'), season_id: Season.find_or_create_by_code('adv'), ordo_id: Ordo.find_or_create_by_label('gen'), common_id: Common.find_or_create_by_code(''), rule: ''},
+].each {|i| Celebration.find_or_create_by_label}
+

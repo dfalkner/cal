@@ -3,7 +3,7 @@ class OrdosController < ApplicationController
 
   # GET /ordos
   # GET /ordos.json
-  def index
+  def index  
     @ordos = Ordo.all
   end
 

@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130402035324) do
+ActiveRecord::Schema.define(version: 20130402211027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "calendars", force: true do |t|
+    t.date     "date"
+    t.integer  "ordo_id"
+    t.integer  "celebration_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "calendars", ["celebration_id"], name: "index_calendars_on_celebration_id"
+  add_index "calendars", ["ordo_id"], name: "index_calendars_on_ordo_id"
 
   create_table "celebrations", force: true do |t|
     t.string   "label"

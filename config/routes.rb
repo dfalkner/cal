@@ -1,4 +1,6 @@
 Cal::Application.routes.draw do
+  resources :calendars
+
   resources :celebrations
 
   resources :ordos
