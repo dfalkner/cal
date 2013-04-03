@@ -17,6 +17,8 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
 
+gem 'thin'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -26,9 +28,15 @@ gem 'jbuilder', '~> 1.0.1'
 # Deploy with Capistrano
 # gem 'capistrano', group: :development
 
-group :test, :development do
+group :development, :test do
+  gem 'debugger'  
+end
+  
+group :test do
   gem 'rspec-rails'
-  gem 'debugger'
+  gem 'minitest-rails'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
 end
 
 

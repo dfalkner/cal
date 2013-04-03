@@ -1,15 +1,17 @@
 class Calendar < ActiveRecord::Base
   belongs_to :ordo
   belongs_to :celebration
+  
+  attr_accessor :date
 
-  def easter (d = self.date)
+  def easter
 
 	  # ==========================================
 	  # Determin Easter Date for any given year based on http://www.assa.org.au/edm.html#Computer
 	  # ==========================================  
 	  first_digit, remainder, temp, t_a, t_b, t_c, t_d, t_e = 0, 0, 0, 0, 0, 0, 0, 0
 
-	  y = d.year
+	  y = self.date.year
 
 	  first_digit = y / 100 #first 2 digits of year 
 	  remainder_19 = y.modulo(19) #remainder of year / 19
@@ -59,8 +61,8 @@ class Calendar < ActiveRecord::Base
 
   def dominical_year (d = self.date)
     dominical = %w[ G F E D C B A]
-    leap = d.leap?
-  	wday = Date.new(d.year,1,1).wday 
+    leap = self.date.leap?
+  	wday = Date.new(self.date.year,1,1).wday 
   
 	  case wday
 	  when 0
@@ -108,6 +110,35 @@ class Calendar < ActiveRecord::Base
 	  end  
 	  return dom_year
 	end
+	
+	def easter_orthodox
+=begin
+RMD(x,y) = remainder when x is divided by y.
+R1=RMD(Year,19)
+R2=RMD(Year,4)
+R3=RMD(Year,7)
+RA=19*R1+16
+R4=RMD(RA,30)
+RB=2*R2+4*R3+6*R4
+R5=RMD(RB,7)
+RC=R4+R5
+=end	  
+	  year = self.date.year
+	  
+	  r1 = year.modulo(19)
+	  r2 = year.modulo(4)
+	  r3 = year.modulo(7)
+	  ra = 19 * r1 + 16
+	  r4 = ra.modulo(30)
+	  rb = (2*r2)+(4*r3)+(6*r4)
+	  r5 = rb.modulo(7)
+	  rc = r4 + r5
+# The number RC ranges from 1 to 35 which corresponds to March 22 to April 25 in the Julian Calendar (currently April 4 to May 8 on the Gregorian). The Julian Calendar is now 13 days behind the Gregorian, and will be until March 1, 2100 when it will be 14 days behind the Gregorian Calendar. 	  
+	  
+	  zero_range_gregorian = Date.new(year,4,3)
+	  zero_range_julian = Date.new(year,4,21)
+	  return {:gregorian => zero_range_gregorian + rc, :julian => zero_range_julian + rc }
+	end  
 
 =begin
 	def starting_week_of_ordinary_time_after_easter 
