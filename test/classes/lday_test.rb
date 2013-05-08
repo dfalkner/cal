@@ -25,7 +25,7 @@ describe Lday do
   it "must be able to return sunday lectionary cycle" do
     @lday.lectionary_sunday_cycle.must_equal "B"
   end
-  it "must be able to return sunday lectionary cycle" do
+  it "must be able to return weekday lectionary cycle" do
     @lday.lectionary_weekday_cycle.must_equal "II"
   end
 
@@ -72,7 +72,7 @@ describe Lday do
   it "must be able to return sunday lectionary cycle" do
     @lday.lectionary_sunday_cycle.must_equal "C"
   end
-  it "must be able to return sunday lectionary cycle" do
+  it "must be able to return weekday lectionary cycle" do
     @lday.lectionary_weekday_cycle.must_equal "I"
   end
 
@@ -119,7 +119,7 @@ describe Lday do
   it "must be able to return sunday lectionary cycle" do
     @lday.lectionary_sunday_cycle.must_equal "A"
   end
-  it "must be able to return sunday lectionary cycle" do
+  it "must be able to return weekday lectionary cycle" do
     @lday.lectionary_weekday_cycle.must_equal "II"
   end
 
@@ -165,7 +165,7 @@ describe Lday do
   it "must be able to return sunday lectionary cycle" do
     @lday.lectionary_sunday_cycle.must_equal "B"
   end
-  it "must be able to return sunday lectionary cycle" do
+  it "must be able to return weekday lectionary cycle" do
     @lday.lectionary_weekday_cycle.must_equal "I"
   end
 
@@ -211,7 +211,7 @@ describe Lday do
   it "must be able to return sunday lectionary cycle" do
     @lday.lectionary_sunday_cycle.must_equal "C"
   end
-  it "must be able to return sunday lectionary cycle" do
+  it "must be able to return weekday lectionary cycle" do
     @lday.lectionary_weekday_cycle.must_equal "II"
   end
 
@@ -258,7 +258,7 @@ describe Lday do
   it "must be able to return sunday lectionary cycle" do
     @lday.lectionary_sunday_cycle.must_equal "A"
   end
-  it "must be able to return sunday lectionary cycle" do
+  it "must be able to return weekday lectionary cycle" do
     @lday.lectionary_weekday_cycle.must_equal "I"
   end
 
@@ -304,7 +304,7 @@ describe Lday do
   it "must be able to return sunday lectionary cycle" do
     @lday.lectionary_sunday_cycle.must_equal "B"
   end
-  it "must be able to return sunday lectionary cycle" do
+  it "must be able to return weekday lectionary cycle" do
     @lday.lectionary_weekday_cycle.must_equal "II"
   end
 
@@ -350,7 +350,7 @@ describe Lday do
   it "must be able to return sunday lectionary cycle" do
     @lday.lectionary_sunday_cycle.must_equal "C"
   end
-  it "must be able to return sunday lectionary cycle" do
+  it "must be able to return weekday lectionary cycle" do
     @lday.lectionary_weekday_cycle.must_equal "I"
   end
 
@@ -398,7 +398,7 @@ describe Lday do
   it "must be able to return sunday lectionary cycle" do
     @lday.lectionary_sunday_cycle.must_equal "A"
   end
-  it "must be able to return sunday lectionary cycle" do
+  it "must be able to return weekday lectionary cycle" do
     @lday.lectionary_weekday_cycle.must_equal "II"
   end
 
@@ -443,7 +443,7 @@ describe Lday do
   it "must be able to return sunday lectionary cycle" do
     @lday.lectionary_sunday_cycle.must_equal "B"
   end
-  it "must be able to return sunday lectionary cycle" do
+  it "must be able to return weekday lectionary cycle" do
     @lday.lectionary_weekday_cycle.must_equal "I"
   end
 
@@ -488,7 +488,7 @@ describe Lday do
   it "must be able to return sunday lectionary cycle" do
     @lday.lectionary_sunday_cycle.must_equal "C"
   end
-  it "must be able to return sunday lectionary cycle" do
+  it "must be able to return weekday lectionary cycle" do
     @lday.lectionary_weekday_cycle.must_equal "II"
   end
 
@@ -533,7 +533,7 @@ describe Lday do
   it "must be able to return sunday lectionary cycle" do
     @lday.lectionary_sunday_cycle.must_equal "A"
   end
-  it "must be able to return sunday lectionary cycle" do
+  it "must be able to return weekday lectionary cycle" do
     @lday.lectionary_weekday_cycle.must_equal "I"
   end
 
@@ -578,7 +578,7 @@ describe Lday do
   it "must be able to return sunday lectionary cycle" do
     @lday.lectionary_sunday_cycle.must_equal "B"
   end
-  it "must be able to return sunday lectionary cycle" do
+  it "must be able to return weekday lectionary cycle" do
     @lday.lectionary_weekday_cycle.must_equal "II"
   end
 
@@ -623,7 +623,7 @@ describe Lday do
   it "must be able to return sunday lectionary cycle" do
     @lday.lectionary_sunday_cycle.must_equal "C"
   end
-  it "must be able to return sunday lectionary cycle" do
+  it "must be able to return weekday lectionary cycle" do
     @lday.lectionary_weekday_cycle.must_equal "I"
   end
 
@@ -649,11 +649,60 @@ describe Lday do
     @lday.corpus_christi.must_equal Date.new(@lday.year, 6, 22)
   end
   it "must retrieve first day of advent" do
+
     @lday.first_day_of_advent.must_equal Date.new(@lday.year, 11, 30)
   end
 
   it "must retrieve starting week number of ordinary time after easter" do
     @lday.starting_week_of_ordinary_time_after_easter.must_equal 10
   end
+
+
+
+describe Lday do
+  before do
+    @lday = Lday.new
+  end
+
+  it "must retrieve julian easter dates successfully for several years" do
+    @lday.date = Date.new(2013,4,12)
+    @lday.julian_easter.to_s.must_equal "2013-05-05"
+
+    @lday.date = Date.new(2014,1,12)
+    @lday.julian_easter.to_s.must_equal "2014-04-20"
+
+    @lday.date = Date.new(2015,4,1)
+    @lday.julian_easter.to_s.must_equal "2015-04-12"
+
+    @lday.date = Date.new(2016,5,5)
+    @lday.julian_easter.to_s.must_equal "2016-05-01"
+
+    @lday.date = Date.new(2017,6,6)
+    @lday.julian_easter.to_s.must_equal "2017-04-16"
+
+    @lday.date = Date.new(2018,7,7)
+    @lday.julian_easter.to_s.must_equal "2018-04-08"
+
+    @lday.date = Date.new(2019,8,8)
+    @lday.julian_easter.to_s.must_equal "2019-04-28"
+
+    @lday.date = Date.new(2020,9,20)
+    @lday.julian_easter.to_s.must_equal "2020-04-19"
+
+    @lday.date = Date.new(2021,10,1)
+    @lday.julian_easter.to_s.must_equal "2021-05-02"
+  end
+
+
+  it "must retrieve same date between easter orthodox and easter catholic on year 2014 and 2017" do
+    @lday.date = Date.new(2014,4,12)
+    @lday.julian_easter.to_s.must_equal "2014-04-20"
+    @lday.easter.to_s.must_equal "2014-04-20"
+
+    @lday.date = Date.new(2017,4,12)
+    @lday.julian_easter.to_s.must_equal "2017-04-16"
+    @lday.easter.to_s.must_equal "2017-04-16"
+  end
+end
 
 end
