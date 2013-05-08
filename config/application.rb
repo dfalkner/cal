@@ -26,6 +26,10 @@ module Cal
     config.generators do |g|
       g.test_framework :mini_test, :spec => true, :fixture => false
     end
-    
+
+    config.autoload_paths += %W(#{config.root}/app/classes)
+ #   config.autoload_paths += File.join(Rails.root, "app", "classes")
+ #   config.eager_load_paths += File.join(Rails.root, "app", "classes")
+
   end
 end

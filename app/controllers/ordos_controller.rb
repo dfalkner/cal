@@ -69,6 +69,6 @@ class OrdosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ordo_params
-      params.require(:ordo).permit(:label, :description)
+      params.require(:ordo).permit(:code, :description)
     end
 end

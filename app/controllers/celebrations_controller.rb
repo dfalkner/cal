@@ -69,6 +69,6 @@ class CelebrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def celebration_params
-      params.require(:celebration).permit(:label, :description, :rank_id, :color_id, :season_id, :ordo_id, :kind, :rule)
+      params.require(:celebration).permit(:code, :description, :rank_id, :color_id, :season_id, :ordo_id, :kind, :rule)
     end
 end

@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130402211027) do
+ActiveRecord::Schema.define(version: 20130403071613) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "calendars", force: true do |t|
     t.date     "date"
@@ -25,20 +28,21 @@ ActiveRecord::Schema.define(version: 20130402211027) do
   add_index "calendars", ["ordo_id"], name: "index_calendars_on_ordo_id"
 
   create_table "celebrations", force: true do |t|
-    t.string   "label"
+    t.string   "code"
     t.text     "description"
     t.integer  "rank_id"
     t.integer  "color_id"
     t.integer  "season_id"
     t.integer  "ordo_id"
-    t.string   "kind"
-    t.string   "rule"
+    t.integer  "common_id"
+    t.text     "rule"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "celebrations", ["color_id"], name: "index_celebrations_on_color_id"
-  add_index "celebrations", ["ordo_id", "label"], name: "index_celebrations_on_ordo_id_and_label", unique: true
+  add_index "celebrations", ["common_id"], name: "index_celebrations_on_common_id"
+  add_index "celebrations", ["ordo_id", "code"], name: "index_celebrations_on_ordo_id_and_code", unique: true
   add_index "celebrations", ["ordo_id"], name: "index_celebrations_on_ordo_id"
   add_index "celebrations", ["rank_id"], name: "index_celebrations_on_rank_id"
   add_index "celebrations", ["season_id"], name: "index_celebrations_on_season_id"
@@ -58,10 +62,22 @@ ActiveRecord::Schema.define(version: 20130402211027) do
   end
 
   create_table "ordos", force: true do |t|
-    t.string   "label"
+    t.string   "code"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "classification"
+    t.string   "orientation"
+    t.string   "polity"
+    t.string   "governance"
+    t.string   "leader"
+    t.string   "associations"
+    t.string   "geographical_areas"
+    t.string   "headquarters"
+    t.integer  "congregations"
+    t.integer  "members"
+    t.integer  "ministers"
+    t.string   "official_website"
   end
 
   create_table "ranks", force: true do |t|

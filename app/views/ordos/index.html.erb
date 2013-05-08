@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Label</th>
+      <th>code</th>
       <th>Description</th>
       <th></th>
       <th></th>
@@ -14,7 +14,7 @@
   <tbody>
     <% @ordos.each do |ordo| %>
     <tr>
-      <td><%= ordo.label %></td>
+      <td><%= ordo.code %></td>
       <td><%= ordo.description %></td>
       <td><%= link_to 'Show', ordo %></td>
       <td><%= link_to 'Edit', edit_ordo_path(ordo) %></td>

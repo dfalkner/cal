@@ -7,18 +7,19 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-
-[ {code: 'green', name:  'Green'}, 
-  {code: 'violet', name:  'Violet'}, 
+puts "Loading Color table"
+[ {code: 'green', name:  'Green'},
+  {code: 'violet', name:  'Violet'},
   {code: 'white', name:  'White'},
-  {code: 'red', name:  'Red'}, 
+  {code: 'red', name:  'Red'},
   {code: 'black', name:  'Black'}
 ].each {|i| Color.find_or_create_by_code(i)}
 
-[ {code: 'none', name:  ' '}, 
-  {code: 'Ab', name:  'Abbot'}, 
+puts "Loading Common table"
+[ {code: 'none', name:  'none'},
+  {code: 'Ab', name:  'Abbot'},
   {code: 'B', name:  'Bishop'},
-  {code: 'Bb', name:  'Bishops'}, 
+  {code: 'Bb', name:  'Bishops'},
   {code: 'BVM', name:  'Blessed Virgin Mary'},
   {code: 'D', name:  'Doctor of the Church'},
   {code: 'Dd', name:  'Doctors of the Church'},
@@ -39,51 +40,57 @@
   {code: 'Vv', name:  'Virgins'}
 ].each {|i| Common.find_or_create_by_code(i)}
 
-[ {label: 'gen', description:  'General Calendar'}, 
-  {label: 'usa', description:  'United States of America'},
-  {label: 'usaa', description:  'United States of America Anglican'}, 
-  {label: 'ar', description:  'Argentina'}, 
-  {label: 'br', description:  'Brazil'}, 
-  {label: 'au', description:  'Australia'},
-  {label: 'ca', description:  'Canada'},
-  {label: 'cl', description:  'Chile'}, 
-  {label: 'hr', description:  'Croatia'}, 
-  {label: 'eng', description:  'England'},
-  {label: 'gr', description:  'Greece'},
-  {label: 'ie', description:  'Ireland'}, 
-  {label: 'lb', description:  'Lebanon'}, 
-  {label: 'mt', description:  'Malta'},
-  {label: 'nz', description:  'New Zealand'},
-  {label: 'ph', description:  'Philippines'}, 
-  {label: 'pt', description:  'Portugal'}, 
-  {label: 'scot', description:  'Scotland'},
-  {label: 'sk', description:  'Slovakia'},
-  {label: 'es', description:  'Spain'}, 
-  {label: 'lk', description:  'Sri Lanka'}, 
-  {label: 'vn', description:  'Vietnam'},
-  {label: 'wal', description:  'Wales'}
-].each {|i| Ordo.find_or_create_by_label(i)}
+puts "Loading Ordo table"
+[ {code: 'gen', description:  'General Calendar'},
+  {code: 'usa', description:  'United States of America'},
+  {code: 'usaa', description:  'United States of America Anglican'},
+  {code: 'ar', description:  'Argentina'},
+  {code: 'br', description:  'Brazil'},
+  {code: 'au', description:  'Australia'},
+  {code: 'ca', description:  'Canada'},
+  {code: 'cl', description:  'Chile'},
+  {code: 'hr', description:  'Croatia'},
+  {code: 'eng', description:  'England'},
+  {code: 'gr', description:  'Greece'},
+  {code: 'ie', description:  'Ireland'},
+  {code: 'lb', description:  'Lebanon'},
+  {code: 'mt', description:  'Malta'},
+  {code: 'nz', description:  'New Zealand'},
+  {code: 'ph', description:  'Philippines'},
+  {code: 'pt', description:  'Portugal'},
+  {code: 'scot', description:  'Scotland'},
+  {code: 'sk', description:  'Slovakia'},
+  {code: 'es', description:  'Spain'},
+  {code: 'lk', description:  'Sri Lanka'},
+  {code: 'vn', description:  'Vietnam'},
+  {code: 'wal', description:  'Wales'}
+].each {|i| Ordo.find_or_create_by_code(i)}
 
-[ {code: 'sol', position: 1, name:  'Solemnity'}, 
-  {code: 'sun', position: 2, name:  'Sunday'}, 
+puts "Loading Rank table"
+[ {code: 'sol', position: 1, name:  'Solemnity'},
+  {code: 'sun', position: 2, name:  'Sunday'},
   {code: 'fst', position: 3, name:  'Feast'},
-  {code: 'mem', position: 4, name:  'Memorial'}, 
-  {code: 'opt', position: 5, name:  'Optional Memorial'}, 
-  {code: 'com', position: 6, name:  'Commemoration'}, 
+  {code: 'mem', position: 4, name:  'Memorial'},
+  {code: 'opt', position: 5, name:  'Optional Memorial'},
+  {code: 'com', position: 6, name:  'Commemoration'},
   {code: 'wd', position: 7, name:  'Weekday'},
   {code: 'na', position: 9, name:  'Not Applicable'}
 ].each {|i| Rank.find_or_create_by_code(i)}
 
-[ {code: 'ord', name:  'Ordinary Time'}, 
-  {code: 'adv', name:  'Advent'}, 
+puts "Loading Season table"
+[ {code: 'ord', name:  'Ordinary Time'},
+  {code: 'adv', name:  'Advent'},
   {code: 'xmas', name:  'Christmas'},
-  {code: 'lent', name:  'Lent'}, 
-  {code: 'hw', name:  'Holy Week'}, 
-  {code: 'east', name:  'Easter'}, 
+  {code: 'lent', name:  'Lent'},
+  {code: 'hw', name:  'Holy Week'},
+  {code: 'easter', name:  'Easter'},
   {code: 'any', name:  'Any Season'},
   {code: 'na', name:  'Not Applicable'}
 ].each {|i| Season.find_or_create_by_code(i)}
 
-[ {label: '', description: '', rank_id: Rank.find_or_create_by_code('sol'), season_id: Season.find_or_create_by_code('adv'), ordo_id: Ordo.find_or_create_by_label('gen'), common_id: Common.find_or_create_by_code(''), rule: ''},
-].each {|i| Celebration.find_or_create_by_label}
+
+
+
+
+
 
