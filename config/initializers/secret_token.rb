@@ -2,11 +2,6 @@
 
 # Your secret key for verifying the integrity of signed cookies.
 # If you change this key, all old signed cookies will become invalid!
-
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-# You can use `rake secret` to generate a secure secret key.
-
-# Make sure your secret_key_base is kept private
-# if you're sharing your code publicly.
-Cal::Application.config.secret_key_base = '455988d29d36e30eb756f0d4f14d6a19c124c85e27e910a82dcd873009116f150ad452cb6ace55922320c40c3bba431b2fa7688f97a9b9d78af0522b533401be'
+Cal::Application.config.secret_token = 'df3ae1db4838d6d0f20fdc6d7bb3aedc68ed163d56faec305052fd243e8560189b2e76a3520141c4b6723b79ef801da86eb30e20aa733321a0eb8cea230fcf63'
