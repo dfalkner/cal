@@ -5,6 +5,7 @@ gem 'rails', '3.2.13'
 gem 'mongoid'
 gem 'bson_ext'
 gem 'unicorn'
+gem 'parameterize'
 
 
 
