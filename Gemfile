@@ -4,7 +4,8 @@ ruby '1.9.3'
 gem 'rails', '3.2.13'
 gem 'mongoid'
 gem 'bson_ext'
-gem 'unicorn'
+#gem 'unicorn'
+gem 'thin'
 gem 'parameterize'
 
 
