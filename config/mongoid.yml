@@ -1,3 +1,7 @@
+production:
+  uri: <%= ENV['MONGOHQ_URL'] %>
+  max_retries_on_connection_failure: 20
+  skip_version_check: true
 development:
   # Configure available database sessions. (required)
   sessions:

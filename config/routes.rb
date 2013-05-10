@@ -1,4 +1,13 @@
 Cal::Application.routes.draw do
+  resources :calendars
+
+
+  resources :celebrations
+
+
+  resources :ordos
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
