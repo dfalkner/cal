@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Label:</b>
+  <%= @ordo.label %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @ordo.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_ordo_path(@ordo) %> |
+<%= link_to 'Back', ordos_path %>

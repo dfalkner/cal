@@ -1,0 +1,37 @@
+<h1>Listing celebrations</h1>
+
+<table>
+  <tr>
+    <th>Label</th>
+    <th>Description</th>
+    <th>Rank</th>
+    <th>Color</th>
+    <th>Season</th>
+    <th>Ordo</th>
+    <th>Common</th>
+    <th>Rule</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @celebrations.each do |celebration| %>
+  <tr>
+    <td><%= celebration.label %></td>
+    <td><%= celebration.description %></td>
+    <td><%= celebration.rank %></td>
+    <td><%= celebration.color %></td>
+    <td><%= celebration.season %></td>
+    <td><%= celebration.ordo %></td>
+    <td><%= celebration.common %></td>
+    <td><%= celebration.rule %></td>
+    <td><%= link_to 'Show', celebration %></td>
+    <td><%= link_to 'Edit', edit_celebration_path(celebration) %></td>
+    <td><%= link_to 'Destroy', celebration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Celebration', new_celebration_path %>
