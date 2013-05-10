@@ -1,6 +1,3 @@
-production:
-  uri: <%= ENV['MONGOHQ_URL'] %>
-  max_retries_on_connection_failure: 20
 development:
   # Configure available database sessions. (required)
   sessions:
