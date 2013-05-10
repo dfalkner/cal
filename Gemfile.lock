@@ -121,6 +121,8 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.4)
+    rufus-scheduler (2.0.19)
+      tzinfo (>= 0.3.23)
     sass (3.2.8)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -161,6 +163,7 @@ DEPENDENCIES
   minitest-rails
   mongoid
   rails (~> 3.2.13)
+  rufus-scheduler
   sass-rails (~> 3.2.3)
   therubyracer
   thin
