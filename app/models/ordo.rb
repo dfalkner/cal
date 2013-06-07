@@ -6,7 +6,7 @@ class Ordo
 
   attr_accessible :label, :description
 
-  validates :label, format: { with: /[a-z0-9_\-\.]*/ }, uniqueness: true, length: { minimum: 3, maximum: 50 }
+  validates :label, format: { with: /[a-z0-9_\-\.]*/ }, uniqueness: true, length: { minimum: 2, maximum: 12 }
   field :_id, type: String, default: ->{ label.to_s.parameterize }
 
   def to_s

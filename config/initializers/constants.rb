@@ -1,54 +1,58 @@
-COLORS = [
-  { label:      'green',   description: 'Green' },
-  { label:      'violet',  description: 'Violet' },
-  { label:      'white',   description: 'White' },
-  { label:      'red',     description: 'Red' },
-  { label:      'black',   description: 'Black'}
-]
-COMMONS = [
-  {label: 'none',   description:  'none'},
-  {label: 'Ab',     description:  'Abbot'},
-  {label: 'B',      description:  'Bishop'},
-  {label: 'Bb',     description:  'Bishops'},
-  {label: 'BVM',    description:  'Blessed Virgin Mary'},
-  {label: 'D',      description:  'Doctor of the Church'},
-  {label: 'Dd',     description:  'Doctors of the Church'},
-  {label: 'De',     description:  'Deacon'},
-  {label: 'Ded',    description:  'Dedication of Church'},
-  {label: 'HM',     description:  'Holy Men'},
-  {label: 'HW',     description:  'Holy Women'},
-  {label: 'M',      description:  'Martyr'},
-  {label: 'Mm',     description:  'Martyrs'},
-  {label: 'P',      description:  'Priest'},
-  {label: 'Pp',     description:  'Priests'},
-  {label: 'Pas',    description:  'Pastor'},
-  {label: 'Po',     description:  'Pope'},
-  {label: 'Rel',    description:  'Religious'},
-  {label: 'Tea',    description:  'Teacher'},
-  {label: 'Underpriv', description:  'Those who work for underpivileged'},
-  {label: 'V',      description:  'Virgin'},
-  {label: 'Vv',     description:  'Virgins'}
-]
-RANKS = [
-  {label: 'sol',  position: 1, description:  'Solemnity'},
-  {label: 'sun',  position: 2, description:  'Sunday'},
-  {label: 'fst',  position: 3, description:  'Feast'},
-  {label: 'mem',  position: 4, description:  'Memorial'},
-  {label: 'opt',  position: 6, description:  'Optional Memorial'},
-  {label: 'com',  position: 7, description:  'Commemoration'},
-  {label: 'wd',   position: 8, description:  'Weekday'},
-  {label: 'na',   position: 9, description:  'Not Applicable'}
-]
-SEASONS = [
-  {label: 'ord',  description:  'Ordinary Time'},
-  {label: 'adv',  description:  'Advent'},
-  {label: 'xmas', description:  'Christmas'},
-  {label: 'lent', description:  'Lent'},
-  {label: 'hw',   description:  'Holy Week'},
-  {label: 'easter', description:  'Easter'},
-  {label: 'any',  description:  'Any Season'},
-  {label: 'na',   description:  'Not Applicable'}
-]
+COLORS = {
+  green:    'Green',
+  violet:   'Violet',
+  white:    'White',
+  red:      'Red',
+  black:    'Black'
+}
+
+COMMONS = {
+  none:       'none',
+  Ab:         'Abbot',
+  B:          'Bishop',
+  Bb:         'Bishops',
+  BVM:        'Blessed Virgin Mary',
+  D:          'Doctor of the Church',
+  Dd:         'Doctors of the Church',
+  De:         'Deacon',
+  Ded:        'Dedication of Church',
+  HM:         'Holy Men',
+  HW:         'Holy Women',
+  M:          'Martyr',
+  Mm:         'Martyrs',
+  P:          'Priest',
+  Pp:         'Priests',
+  Pas:        'Pastor',
+  Po:         'Pope',
+  Rel:        'Religious',
+  Tea:        'Teacher',
+  Underpriv:  'Those who work for underpivileged',
+  V:          'Virgin',
+  Vv:         'Virgins'
+}
+
+RANKS = {
+  sol:  'Solemnity',
+  sun:  'Sunday',
+  fst:  'Feast',
+  mem:  'Memorial',
+  opt:  'Optional Memorial',
+  com:  'Commemoration',
+  wd:   'Weekday',
+  na:   'Not Applicable'
+}
+
+  SEASONS = {
+  ord:      'Ordinary Time',
+  adv:      'Advent',
+  xmas:     'Christmas',
+  lent:     'Lent',
+  hw:       'Holy Week',
+  easter:   'Easter',
+  any:      'Any Season',
+  na:       'Not Applicable'
+}
+
 #DAYNAMES = %w(Sunday Monday Tuesday Wednesday Thursday Friday Saturday)
 DAYNAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Saturday']
 CALENDAR_YEARS = 10
