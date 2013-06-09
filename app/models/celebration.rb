@@ -5,7 +5,6 @@ class Celebration
   field :description, type: String
   field :rank,    type: String
   field :color,   type: String
-  field :season,  type: String
   field :ordo,    type: String
   field :common,  type: String
   field :rule,    type: String

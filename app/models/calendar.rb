@@ -2,7 +2,6 @@ class Calendar
   include Mongoid::Document
   include Mongoid::Timestamps
   field :day, type: Date
-
   field :ordo, type: String
 
   embeds_many :celebrations

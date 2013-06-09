@@ -31,6 +31,32 @@ COMMONS = {
   Vv:         'Virgins'
 }
 
+ORDOS = {
+  gen:  'General Calendar',
+  usa:  'United States of America',
+  usaa: 'United States of America Anglican',
+  ar:   'Argentina',
+  br:   'Brazil',
+  au:   'Australia',
+  ca:   'Canada',
+  cl:   'Chile',
+  hr:   'Croatia',
+  eng:  'England',
+  gr:   'Greece',
+  ie:   'Ireland',
+  lb:   'Lebanon',
+  mt:   'Malta',
+  nz:   'New Zealand',
+  ph:   'Philippines',
+  pt:   'Portugal',
+  scot: 'Scotland',
+  sk:   'Slovakia',
+  es:   'Spain',
+  lk:   'Sri Lanka',
+  vn:   'Vietnam',
+  wal:  'Wales'
+}
+
 RANKS = {
   sol:  'Solemnity',
   sun:  'Sunday',
@@ -42,7 +68,7 @@ RANKS = {
   na:   'Not Applicable'
 }
 
-  SEASONS = {
+SEASONS = {
   ord:      'Ordinary Time',
   adv:      'Advent',
   xmas:     'Christmas',
